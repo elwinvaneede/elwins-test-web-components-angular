@@ -4,21 +4,40 @@
 
 These are my test Web Components specifically build for React.
 
-## Step 1.
+## Using these components
 
-- Update the `package.json` to have the correct package name for this repo.
-- Replace `component-library` under `dependencies` with your core stencil package name.
+Add this package to your project:
 
-## Step 2.
+```shell
+npm install elwins-test-web-components-angular --save
+```
 
-- Build your core stencil package.
+Or:
 
-## Step 3.
+```shell
+yarn add elwins-test-web-components-angular
+```
 
+Import the module(s) you want to use:
+
+```js
+import { ElwinsTestWebComponentsModule } from 'elwins-test-web-components-angular';
+
+@NgModule({
+  ...
+  imports: [
+    ElwinsTestWebComponentsModule
+  ],
+  ...
+})
+export class AppModule { }
+```
+
+## How to release a new version
+
+- Build the core Stencil package (`elwins-test-web-comoonents`)
 - Update `src/component-library-module.ts`.
-  - You will need to import all of your components from `./directives/proxies`. Currently the file states `DemoComponent` as the only import. This will be replaced with the entire list.
-  - Then update the `DECLARATIONS` const array to also list out all of the component names. It also currently contains `DemoComponent` as the only item, but this will need to be replaced with the entire list.
-
-## Step 4.
-
-- Run build on this package.
+  - You will need to import all of your components from `./directives/proxies`.
+  - Then update the `DECLARATIONS` const array to also list out all of the component names.
+- Run build on this package
+- Publish
