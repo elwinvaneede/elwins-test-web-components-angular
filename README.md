@@ -2,7 +2,7 @@
 
 # Elwins Test Web Components for Angular
 
-These are my test Web Components specifically build for React.
+These are my test Web Components specifically build for Angular.
 
 ## Using these components
 
@@ -18,7 +18,7 @@ Or:
 yarn add elwins-test-web-components-angular
 ```
 
-Import the module(s) you want to use:
+Import the ElwinsTestWebComponentsModule module in your `app.module.ts`:
 
 ```js
 import { ElwinsTestWebComponentsModule } from 'elwins-test-web-components-angular';
@@ -30,7 +30,13 @@ import { ElwinsTestWebComponentsModule } from 'elwins-test-web-components-angula
   ],
   ...
 })
-export class AppModule { }
+export class AppModule {}
+```
+
+Use the component(s) you want in your html:
+
+```html
+<eve-button href="https://elwinvaneede.com">Website</eve-button>
 ```
 
 ## How to release a new version
