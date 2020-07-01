@@ -1,19 +1,21 @@
 import { NgModule } from "@angular/core";
-import { defineCustomElements } from "component-library/loader";
+import { defineCustomElements } from "elwins-test-web-components/loader";
 
-import { DemoComponent } from "./directives/proxies";
+import { EveButton } from "./directives/proxies";
+import { EveIntroduction } from "./directives/proxies";
 
 defineCustomElements(window);
 
 const DECLARATIONS = [
   // proxies
-  DemoComponent
+  EveButton,
+  EveIntroduction,
 ];
 
 @NgModule({
   declarations: DECLARATIONS,
   exports: DECLARATIONS,
   imports: [],
-  providers: []
+  providers: [],
 })
-export class ComponentLibraryModule {}
+export class ElwinsTestWebComponentsModule {}
