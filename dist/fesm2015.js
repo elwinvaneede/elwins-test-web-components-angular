@@ -1,6 +1,6 @@
 import { __decorate, __metadata } from 'tslib';
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, NgZone, NgModule } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import 'rxjs';
 import { defineCustomElements } from 'elwins-test-web-components/loader';
 
 /**
@@ -20,20 +20,24 @@ const proxyInputs = (/**
      * @param {?} item
      * @return {?}
      */
-    item => {
+    (item) => {
         Object.defineProperty(Prototype, item, {
             /**
              * @return {?}
              */
-            get() { return this.el[item]; },
+            get() {
+                return this.el[item];
+            },
             /**
              * @param {?} val
              * @return {?}
              */
-            set(val) { this.z.runOutsideAngular((/**
-             * @return {?}
-             */
-            () => (this.el[item] = val))); }
+            set(val) {
+                this.z.runOutsideAngular((/**
+                 * @return {?}
+                 */
+                () => (this.el[item] = val)));
+            },
         });
     }));
 });
@@ -50,7 +54,7 @@ const proxyMethods = (/**
      * @param {?} methodName
      * @return {?}
      */
-    methodName => {
+    (methodName) => {
         Prototype[methodName] = (/**
          * @return {?}
          */
@@ -64,22 +68,6 @@ const proxyMethods = (/**
         });
     }));
 });
-/** @type {?} */
-const proxyOutputs = (/**
- * @param {?} instance
- * @param {?} el
- * @param {?} events
- * @return {?}
- */
-(instance, el, events) => {
-    events.forEach((/**
-     * @param {?} eventName
-     * @return {?}
-     */
-    eventName => instance[eventName] = fromEvent(el, eventName)));
-})
-// tslint:disable-next-line: only-arrow-functions
-;
 // tslint:disable-next-line: only-arrow-functions
 /**
  * @param {?} opts
@@ -102,6 +90,11 @@ function ProxyCmp(opts) {
     });
     return decorator;
 }
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 let EveButton = class EveButton {
     /**
      * @param {?} c
@@ -115,7 +108,12 @@ let EveButton = class EveButton {
     }
 };
 EveButton.decorators = [
-    { type: Component, args: [{ selector: 'eve-button', changeDetection: ChangeDetectionStrategy.OnPush, template: '<ng-content></ng-content>', inputs: ['fill', 'href', 'rel', 'target'] },] },
+    { type: Component, args: [{
+                selector: 'eve-button',
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                template: '<ng-content></ng-content>',
+                inputs: ['fill', 'href', 'rel', 'target']
+            },] },
 ];
 /** @nocollapse */
 EveButton.ctorParameters = () => [
@@ -124,7 +122,9 @@ EveButton.ctorParameters = () => [
     { type: NgZone }
 ];
 EveButton = __decorate([
-    ProxyCmp({ inputs: ['fill', 'href', 'rel', 'target'] }),
+    ProxyCmp({
+        inputs: ['fill', 'href', 'rel', 'target']
+    }),
     __metadata("design:paramtypes", [ChangeDetectorRef, ElementRef, NgZone])
 ], EveButton);
 let EveIntroduction = class EveIntroduction {
@@ -140,7 +140,12 @@ let EveIntroduction = class EveIntroduction {
     }
 };
 EveIntroduction.decorators = [
-    { type: Component, args: [{ selector: 'eve-introduction', changeDetection: ChangeDetectionStrategy.OnPush, template: '<ng-content></ng-content>', inputs: ['first', 'last', 'middle'] },] },
+    { type: Component, args: [{
+                selector: 'eve-introduction',
+                changeDetection: ChangeDetectionStrategy.OnPush,
+                template: '<ng-content></ng-content>',
+                inputs: ['first', 'last', 'middle']
+            },] },
 ];
 /** @nocollapse */
 EveIntroduction.ctorParameters = () => [
@@ -149,7 +154,9 @@ EveIntroduction.ctorParameters = () => [
     { type: NgZone }
 ];
 EveIntroduction = __decorate([
-    ProxyCmp({ inputs: ['first', 'last', 'middle'] }),
+    ProxyCmp({
+        inputs: ['first', 'last', 'middle']
+    }),
     __metadata("design:paramtypes", [ChangeDetectorRef, ElementRef, NgZone])
 ], EveIntroduction);
 
@@ -175,4 +182,4 @@ ElwinsTestWebComponentsModule.decorators = [
             },] },
 ];
 
-export { ElwinsTestWebComponentsModule, EveButton, EveIntroduction, ProxyCmp, proxyInputs, proxyMethods, proxyOutputs };
+export { ElwinsTestWebComponentsModule, EveButton, EveIntroduction, ProxyCmp as ɵa };

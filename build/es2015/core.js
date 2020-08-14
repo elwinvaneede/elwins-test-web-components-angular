@@ -5,4 +5,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
-export { ElwinsTestWebComponentsModule, ProxyCmp, proxyInputs, proxyMethods, proxyOutputs, EveButton, EveIntroduction } from './index';
+export { ElwinsTestWebComponentsModule, EveButton, EveIntroduction } from './index';
+export { ProxyCmp as ɵa } from './directives/angular-component-lib/utils';

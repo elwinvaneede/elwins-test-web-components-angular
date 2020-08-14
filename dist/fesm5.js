@@ -1,6 +1,6 @@
 import { __decorate, __metadata } from 'tslib';
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, NgZone, NgModule } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import 'rxjs';
 import { defineCustomElements } from 'elwins-test-web-components/loader';
 
 /**
@@ -25,7 +25,9 @@ function (Cmp, inputs) {
             get: /**
              * @return {?}
              */
-            function () { return this.el[item]; },
+            function () {
+                return this.el[item];
+            },
             set: /**
              * @param {?} val
              * @return {?}
@@ -36,7 +38,7 @@ function (Cmp, inputs) {
                  * @return {?}
                  */
                 function () { return (_this.el[item] = val); }));
-            }
+            },
         });
     }));
 });
@@ -68,22 +70,6 @@ function (Cmp, methods) {
         });
     }));
 });
-/** @type {?} */
-var proxyOutputs = (/**
- * @param {?} instance
- * @param {?} el
- * @param {?} events
- * @return {?}
- */
-function (instance, el, events) {
-    events.forEach((/**
-     * @param {?} eventName
-     * @return {?}
-     */
-    function (eventName) { return instance[eventName] = fromEvent(el, eventName); }));
-})
-// tslint:disable-next-line: only-arrow-functions
-;
 // tslint:disable-next-line: only-arrow-functions
 /**
  * @param {?} opts
@@ -106,6 +92,11 @@ function ProxyCmp(opts) {
     });
     return decorator;
 }
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var EveButton = /** @class */ (function () {
     function EveButton(c, r, z) {
         this.z = z;
@@ -113,7 +104,12 @@ var EveButton = /** @class */ (function () {
         this.el = r.nativeElement;
     }
     EveButton.decorators = [
-        { type: Component, args: [{ selector: 'eve-button', changeDetection: ChangeDetectionStrategy.OnPush, template: '<ng-content></ng-content>', inputs: ['fill', 'href', 'rel', 'target'] },] },
+        { type: Component, args: [{
+                    selector: 'eve-button',
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    template: '<ng-content></ng-content>',
+                    inputs: ['fill', 'href', 'rel', 'target']
+                },] },
     ];
     /** @nocollapse */
     EveButton.ctorParameters = function () { return [
@@ -122,7 +118,9 @@ var EveButton = /** @class */ (function () {
         { type: NgZone }
     ]; };
     EveButton = __decorate([
-        ProxyCmp({ inputs: ['fill', 'href', 'rel', 'target'] }),
+        ProxyCmp({
+            inputs: ['fill', 'href', 'rel', 'target']
+        }),
         __metadata("design:paramtypes", [ChangeDetectorRef, ElementRef, NgZone])
     ], EveButton);
     return EveButton;
@@ -134,7 +132,12 @@ var EveIntroduction = /** @class */ (function () {
         this.el = r.nativeElement;
     }
     EveIntroduction.decorators = [
-        { type: Component, args: [{ selector: 'eve-introduction', changeDetection: ChangeDetectionStrategy.OnPush, template: '<ng-content></ng-content>', inputs: ['first', 'last', 'middle'] },] },
+        { type: Component, args: [{
+                    selector: 'eve-introduction',
+                    changeDetection: ChangeDetectionStrategy.OnPush,
+                    template: '<ng-content></ng-content>',
+                    inputs: ['first', 'last', 'middle']
+                },] },
     ];
     /** @nocollapse */
     EveIntroduction.ctorParameters = function () { return [
@@ -143,7 +146,9 @@ var EveIntroduction = /** @class */ (function () {
         { type: NgZone }
     ]; };
     EveIntroduction = __decorate([
-        ProxyCmp({ inputs: ['first', 'last', 'middle'] }),
+        ProxyCmp({
+            inputs: ['first', 'last', 'middle']
+        }),
         __metadata("design:paramtypes", [ChangeDetectorRef, ElementRef, NgZone])
     ], EveIntroduction);
     return EveIntroduction;
@@ -174,4 +179,4 @@ var ElwinsTestWebComponentsModule = /** @class */ (function () {
     return ElwinsTestWebComponentsModule;
 }());
 
-export { ElwinsTestWebComponentsModule, EveButton, EveIntroduction, ProxyCmp, proxyInputs, proxyMethods, proxyOutputs };
+export { ElwinsTestWebComponentsModule, EveButton, EveIntroduction, ProxyCmp as ɵa };
